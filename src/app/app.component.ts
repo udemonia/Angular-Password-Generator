@@ -6,17 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  length = 0;
+  length = 16;
   password = '';
   includeLetters = false
   includeNumbers = false
   includeSymbols = false
+  includeCapitals = false
 
   onChangeLength(value: string) {
     const numberValue = parseInt(value)
     if (!isNaN(numberValue)) {
       this.length = numberValue
     }
+  }
+
+  onChangeCapitals() {
+    this.includeCapitals = !this.includeCapitals
   }
 
   onChangeUseLetters() {
@@ -33,6 +38,11 @@ export class AppComponent {
     const numbers = '1234567890'
     const letters = 'abcdefghijklmnopqrstuvwxyz'
     const symbols = '!@#$%^&*'
+    const capitals = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    if (this.length > 999) {
+      alert("You're a Crazy Person!")
+    }
 
     let validChars = '';
     if (this.includeLetters) {
@@ -43,6 +53,9 @@ export class AppComponent {
     }
     if (this.includeSymbols) {
       validChars += symbols
+    }
+    if (this.includeCapitals) {
+      validChars += capitals
     }
 
     let generatedPassword = '';
