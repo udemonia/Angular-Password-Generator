@@ -40,7 +40,7 @@ export class AppComponent {
     const symbols = '!@#$%^&*'
     const capitals = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    if (this.length > 999) {
+    if (this.length > 999 && this.length) {
       alert("You're a Crazy Person!")
     }
 
