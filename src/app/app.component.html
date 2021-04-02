@@ -15,8 +15,8 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="http://easypassword.site">
-          Home
+        <a class="navbar-item" href="https://www.easypassword.site/">
+          🏠 Home
         </a>
   
         <div class="navbar-item has-dropdown is-hoverable">
@@ -25,14 +25,11 @@
           </a>
   
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
+            <a class="navbar-item"(click)="getUsersLatLong()">
               Contact
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://www.redwolf.in/image/catalog/artwork-Images/mens/Digital/nobody-cares-t-shirt-artwork.png">
               Report an issue
             </a>
           </div>
@@ -59,7 +56,9 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="box column is-one-third">
-          <h1 class="title has-text-centered">Password Generator</h1>
+          <h1 class="title has-text-centered">
+            🔒 Password Generator
+          </h1>
     
           <div class="field">
             <label>Length</label>
@@ -101,7 +100,6 @@
               </label>
             </div>
           </div>
-    
           <button [disabled]="
               !(length && (includeLetters || includeCapitals || includeSymbols || includeNumbers))"
               (click)="onButtonClick()"class="button is-link is-fullwidth">
@@ -126,7 +124,7 @@ height: 100px;
 width: 100%;'>
   <div class="content has-text-centered">
     <p>
-      <strong>Easy Password</strong> by Brandon Lambert.The source code is licensed
+      <strong>Easy Password!</strong> The source code is licensed
       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
       is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
     </p>

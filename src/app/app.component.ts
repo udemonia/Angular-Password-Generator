@@ -12,6 +12,7 @@ export class AppComponent {
   includeNumbers = false
   includeSymbols = false
   includeCapitals = false
+  includeEmojis = false
 
   onChangeLength(value: string) {
     const numberValue = parseInt(value)
@@ -32,6 +33,9 @@ export class AppComponent {
   }
   onChangeSymbol() {
     this.includeSymbols = !this.includeSymbols
+  }
+  onEmojis() {
+    this.includeEmojis = !this.includeEmojis
   }
 
   onButtonClick() {
@@ -71,4 +75,20 @@ export class AppComponent {
     console.log(this.includeSymbols)
     console.log(`Number Length: ${this.length}`)
   }
+
+  getUsersLatLong() {
+    var x = document.getElementById("demo");
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+    }
+  }
+
 }
