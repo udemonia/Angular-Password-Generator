@@ -1,62 +1,139 @@
-<div class='padding' style='padding: 2rem 2rem'>
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="box column is-one-third">
-        <h1 class="title has-text-centered">Password Generator</h1>
-  
-        <div class="field">
-          <label>Length</label>
-          <input class="input" (input)="onChangeLength($event.target.value)" placeholder="16" />
-        </div>
-  
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input (change)="onChangeUseLetters()" type="checkbox" />
-              Use Letters
-            </label>
-          </div>
-        </div>
+<body style='margin: 0 0 100px'>
 
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input (change)="onChangeCapitals()" type="checkbox" />
-              Use Capital Letters
-            </label>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="../assets/passTwo.png">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="true" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="http://easypassword.site">
+          Home
+        </a>
+  
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+  
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
           </div>
         </div>
+      </div>
   
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input (change)="onChangeNumbers()" type="checkbox" />
-              Use Numbers
-            </label>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-link">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light">
+              Log in
+            </a>
           </div>
         </div>
-  
-        <div class="field">
-          <div class="control">
-            <label class="checkbox">
-              <input (change)="onChangeSymbol()" type="checkbox" />
-              Use Symbols
-            </label>
-          </div>
-        </div>
-  
-        <button [disabled]="
-            !(length && (includeLetters || includeCapitals || includeSymbols || includeNumbers))"
-            (click)="onButtonClick()"class="button is-link is-fullwidth">
-          Generate!
-        </button>
-  
-        <div class="box" *ngIf="password">
-          <label>Your Password</label>
-          <input class="input is-focused" [value]="password" />
-        </div>
+      </div>
+    </div>
+  </nav>
 
+  
+  <div class='padding' style='padding: 2rem 2rem'>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="box column is-one-third">
+          <h1 class="title has-text-centered">Password Generator</h1>
+    
+          <div class="field">
+            <label>Length</label>
+            <input class="input" (input)="onChangeLength($event.target.value)" placeholder="16" />
+          </div>
+    
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input (change)="onChangeUseLetters()" type="checkbox" />
+                Use Letters
+              </label>
+            </div>
+          </div>
+  
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input (change)="onChangeCapitals()" type="checkbox" />
+                Use Capital Letters
+              </label>
+            </div>
+          </div>
+    
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input (change)="onChangeNumbers()" type="checkbox" />
+                Use Numbers
+              </label>
+            </div>
+          </div>
+    
+          <div class="field">
+            <div class="control">
+              <label class="checkbox">
+                <input (change)="onChangeSymbol()" type="checkbox" />
+                Use Symbols
+              </label>
+            </div>
+          </div>
+    
+          <button [disabled]="
+              !(length && (includeLetters || includeCapitals || includeSymbols || includeNumbers))"
+              (click)="onButtonClick()"class="button is-link is-fullwidth">
+            Generate!
+          </button>
+    
+          <div class="box" *ngIf="password">
+            <label>Your Password</label>
+            <input class="input is-focused" [value]="password" />
+          </div>
+  
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
+
+<footer class="footer" style='position: absolute;
+left: 0;
+bottom: 0;
+height: 100px;
+width: 100%;'>
+  <div class="content has-text-centered">
+    <p>
+      <strong>Easy Password</strong> by Brandon Lambert.The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+
+
+
+
+
